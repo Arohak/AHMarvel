@@ -1,0 +1,73 @@
+PODS:
+  - Alamofire (4.5.1)
+  - CryptoSwift (0.8.0)
+  - Dollar (7.0.0)
+  - Fakery (3.2.0)
+  - Keys (1.0.0)
+  - Kingfisher (4.2.0)
+  - Moya (10.0.0):
+    - Moya/Core (= 10.0.0)
+  - Moya-ObjectMapper/Core (2.5):
+    - Moya (~> 10.0.0)
+    - ObjectMapper (~> 3.0.0)
+  - Moya-ObjectMapper/RxSwift (2.5):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
+    - RxSwift (~> 4.0.0)
+  - Moya/Core (10.0.0):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (10.0.0):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Nimble (7.0.2)
+  - ObjectMapper (3.0.0)
+  - Quick (1.2.0)
+  - Result (3.2.4)
+  - Reusable (4.0.0):
+    - Reusable/Storyboard (= 4.0.0)
+    - Reusable/View (= 4.0.0)
+  - Reusable/Storyboard (4.0.0)
+  - Reusable/View (4.0.0)
+  - RxSwift (4.0.0)
+  - SwiftGen (5.2.1)
+
+DEPENDENCIES:
+  - CryptoSwift
+  - Dollar
+  - Fakery
+  - Keys (from `Pods/CocoaPodsKeys`)
+  - Kingfisher
+  - Moya-ObjectMapper/RxSwift
+  - Moya/RxSwift
+  - Nimble
+  - ObjectMapper
+  - Quick
+  - Reusable
+  - RxSwift
+  - SwiftGen
+
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  CryptoSwift: f81907430ebbe38b8404b4f6fb40f3c576a8755f
+  Dollar: b052b910c711bed91c26caeaec85aa22bccf1655
+  Fakery: 4e10e81be9341d279bc2f7f0a0b82be662b1e535
+  Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
+  Moya: adb58b0f4e58430db43cc6e2f6ebab1836501186
+  Moya-ObjectMapper: 167adf69db0298bf3a19ea05cb9a16ee117c8ef5
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
+  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
+
+PODFILE CHECKSUM: ac664c5723c4602b95879207208af476ff4ab1cf
+
+COCOAPODS: 1.4.0
