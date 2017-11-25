@@ -13,6 +13,7 @@ import ObjectMapper
 import Moya_ObjectMapper
 
 extension Response {
+    
     func removeAPIWrappers() -> Response {
         guard let json = try? self.mapJSON() as? Dictionary<String, AnyObject>,
             let results = json?["data"]?["results"] ?? [],
@@ -25,13 +26,13 @@ extension Response {
                                    response: self.response)
         return newResponse
     }
+    
 }
 
 struct MarvelAPIManager {
     
     let provider: MoyaProvider<MarvelAPI>
     let disposeBag = DisposeBag()
-    
     
     init() {
         provider = MoyaProvider<MarvelAPI>()
@@ -40,6 +41,7 @@ struct MarvelAPIManager {
 }
 
 extension MarvelAPIManager {
+    
     typealias AdditionalStepsAction = (() -> ())
     
     fileprivate func requestObject<T: Mappable>(_ token: MarvelAPI,

@@ -22,7 +22,6 @@ extension CharacterViewController {
     }
 }
 
-
 extension CharacterViewController {
     func setupView() {
         name.text = character?.name ?? ""

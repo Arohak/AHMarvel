@@ -20,6 +20,8 @@ target 'Marvel' do
    pod 'Dollar'
    pod 'Kingfisher'
    pod 'Reusable'
+   pod 'PureLayout'
+   
 end
 
 target 'MarvelTests' do

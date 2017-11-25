@@ -18,6 +18,7 @@
 		5237FB041FB1C8A700ADA04E /* ThumbImageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237FAF91FB1C8A600ADA04E /* ThumbImageSpec.swift */; };
 		5237FB051FB1C8A700ADA04E /* characters_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 5237FAFA1FB1C8A600ADA04E /* characters_response.json */; };
 		5237FB061FB1C8A700ADA04E /* CharactersViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237FAFB1FB1C8A700ADA04E /* CharactersViewControllerSpec.swift */; };
+		52D72D121FC9780900852884 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72D111FC9780900852884 /* CustomCell.swift */; };
 		577769109DC3FB06E7D1882F /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D7213E1EA596B7C60C8E59 /* Pods_Marvel.framework */; };
 		671125B30D99F4DD21E91BD5 /* Pods_MarvelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6A61295B862198BB138719 /* Pods_MarvelTests.framework */; };
 		9922F1571DFDB69200237BFE /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9922F1561DFDB69200237BFE /* ColorPalette.swift */; };
@@ -82,6 +83,7 @@
 		5237FAF91FB1C8A600ADA04E /* ThumbImageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbImageSpec.swift; sourceTree = "<group>"; };
 		5237FAFA1FB1C8A600ADA04E /* characters_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters_response.json; sourceTree = "<group>"; };
 		5237FAFB1FB1C8A700ADA04E /* CharactersViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewControllerSpec.swift; sourceTree = "<group>"; };
+		52D72D111FC9780900852884 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		8289D5AF9F3BDEDBC4EE6E82 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		8C6A61295B862198BB138719 /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9922F1561DFDB69200237BFE /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				99FC2BCB1DDDB8B1006CB7EE /* Xibs */,
 				99B248E21DDB427000027C10 /* CharacterTableCell.swift */,
 				99D0DEB31DE259F100FE34D7 /* CharacterCollectionCell.swift */,
+				52D72D111FC9780900852884 /* CustomCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -304,12 +307,12 @@
 		99E1DFE21DDA1F4C006F9D96 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
-				9922F1581DFDBFF400237BFE /* Apperance */,
-				99D0DEBB1DE268D500FE34D7 /* Extensions */,
 				9939CFCC1DDA2716008CE399 /* AppDelegate */,
-				99B248E11DDB423900027C10 /* Cells */,
 				9939CFC51DDA2417008CE399 /* Controllers */,
 				99FC2BC61DDDB0A5006CB7EE /* Datasources */,
+				9922F1581DFDBFF400237BFE /* Apperance */,
+				99D0DEBB1DE268D500FE34D7 /* Extensions */,
+				99B248E11DDB423900027C10 /* Cells */,
 				9939CFD21DDA332A008CE399 /* Models */,
 				9939CFCD1DDA2DF1008CE399 /* Network */,
 				9939CFCB1DDA26A3008CE399 /* Resources */,
@@ -323,8 +326,8 @@
 			children = (
 				99FC2BC91DDDB1BF006CB7EE /* CharactersDatasource.swift */,
 				99FC2BC71DDDB0F3006CB7EE /* ItemsTableViewDatasource.swift */,
-				99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */,
 				99D0DEB71DE25BF300FE34D7 /* CharactersCollectionDatasource.swift */,
+				99D0DEB11DE2598F00FE34D7 /* ItemsCollectionViewDatasource.swift */,
 			);
 			path = Datasources;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -532,6 +536,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -650,6 +655,7 @@
 				9922F1571DFDB69200237BFE /* ColorPalette.swift in Sources */,
 				99E1DFE41DDA1F4C006F9D96 /* AppDelegate.swift in Sources */,
 				99FC2BCA1DDDB1BF006CB7EE /* CharactersDatasource.swift in Sources */,
+				52D72D121FC9780900852884 /* CustomCell.swift in Sources */,
 				9939CFCF1DDA2E07008CE399 /* MarvelAPI.swift in Sources */,
 				99FC2BCF1DDDB966006CB7EE /* ThumbImage.swift in Sources */,
 			);

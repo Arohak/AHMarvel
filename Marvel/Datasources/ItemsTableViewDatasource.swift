@@ -9,6 +9,7 @@
 import UIKit
 
 protocol ItemsTableViewDatasource: UITableViewDataSource {
+    
     associatedtype T
     var items:[T] {get}
     weak var tableView: UITableView? {get}
@@ -20,6 +21,7 @@ protocol ItemsTableViewDatasource: UITableViewDataSource {
 }
 
 extension ItemsTableViewDatasource {
+    
     func setupTableView() {
         self.tableView?.dataSource = self
         self.tableView?.delegate = self.delegate
