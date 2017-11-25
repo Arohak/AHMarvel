@@ -31,6 +31,8 @@ target 'MarvelTests' do
     pod 'Nimble'
     pod 'Fakery'
     pod 'ObjectMapper'
+    pod 'PureLayout'
+
 end
 
 #post_install do |installer|
