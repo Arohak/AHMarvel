@@ -15,15 +15,14 @@ final class CharactersCollectionDatasource: NSObject, ItemsCollectionViewDatasou
     weak var delegate: UICollectionViewDelegate?
     
     required init(items: [Character], collectionView: UICollectionView, delegate: UICollectionViewDelegate) {
+        super.init()
+
         self.items = items
         self.collectionView = collectionView
         self.delegate = delegate
-        super.init()
         collectionView.register(cellType: CharacterCollectionCell.self)
         self.setupCollectionView()
     }
-    
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
@@ -33,6 +32,7 @@ final class CharactersCollectionDatasource: NSObject, ItemsCollectionViewDatasou
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CharacterCollectionCell.self)
         let character = self.items[indexPath.row]
         cell.setup(item: character)
+        
         return cell
     }
 }
@@ -49,9 +49,9 @@ class CharactersCollectionDelegate: NSObject, UICollectionViewDelegate, UICollec
         delegate.didSelectCharacter(at: indexPath)
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.size.width
+        
         return CharacterCollectionCell.size(for: width)
     }
 }

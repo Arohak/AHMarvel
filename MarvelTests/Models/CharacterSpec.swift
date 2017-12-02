@@ -11,6 +11,7 @@ import Nimble
 @testable import Marvel
 
 class CharacterSpec: QuickSpec {
+    
     override func spec() {
         describe("a character") {
             
@@ -29,7 +30,6 @@ class CharacterSpec: QuickSpec {
             it("should have a thumbImage") {
                 expect(character.thumImage).toNot(beNil())
             }
-            
         }
     }
 }

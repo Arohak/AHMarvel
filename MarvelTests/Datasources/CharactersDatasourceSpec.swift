@@ -13,6 +13,7 @@ import Nimble
 
 
 class CharactersDatasourceSpec: QuickSpec {
+    
     override func spec() {
         describe("CharactersDatasource") {
             
@@ -46,7 +47,7 @@ class CharactersDatasourceSpec: QuickSpec {
             it("should have a configured cell") {
                 let indexPath = IndexPath(row: 0, section: 0)
                 let cell = controller.tableDatasource!.tableView(controller.tableView, cellForRowAt: indexPath) as! CharacterTableCell
-                let name = cell.name.text!
+                let name = cell.cellContentView.titleLabel.text!
                 expect(name).to(equal(character.name))
             }
             

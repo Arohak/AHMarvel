@@ -12,6 +12,7 @@ import Nimble
 @testable import Marvel
 
 class ThumbImageSpec: QuickSpec {
+    
     override func spec() {
         describe("a thumbImage") {
             

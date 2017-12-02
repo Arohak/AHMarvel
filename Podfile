@@ -20,6 +20,7 @@ target 'Marvel' do
    pod 'Dollar'
    pod 'Kingfisher'
    pod 'Reusable'
+   pod 'PureLayout'
    
 end
 
@@ -30,7 +31,8 @@ target 'MarvelTests' do
     pod 'Nimble'
     pod 'Fakery'
     pod 'ObjectMapper'
-    
+    pod 'PureLayout'
+
 end
 
 #post_install do |installer|

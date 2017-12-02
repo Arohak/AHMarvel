@@ -45,12 +45,6 @@ class CharactersDelegateSpec: QuickSpec {
                 expect(controller.tableDelegate).toNot(beNil())
             }
             
-            it("should have a cell of expected height") {
-                let indexPath = IndexPath(row: 0, section: 0)
-                let height = controller.tableDelegate!.tableView(controller.tableView, heightForRowAt: indexPath)
-                expect(height).to(equal(80))
-            }
-            
             it("should call delegate on didSelectedRowAt") {
                 let indexPath = IndexPath(row: 0, section: 0)
                 let charactersDelegateMock = CharactersDelegateMock()

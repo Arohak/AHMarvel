@@ -9,6 +9,7 @@
 import UIKit
 
 protocol ItemsCollectionViewDatasource: UICollectionViewDataSource {
+    
     associatedtype T
     var items:[T] {get}
     weak var collectionView: UICollectionView? {get}
@@ -20,6 +21,7 @@ protocol ItemsCollectionViewDatasource: UICollectionViewDataSource {
 }
 
 extension ItemsCollectionViewDatasource {
+    
     func setupCollectionView() {
         self.collectionView?.dataSource = self
         self.collectionView?.delegate = self.delegate

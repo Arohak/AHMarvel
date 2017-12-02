@@ -35,6 +35,7 @@ extension CharactersViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupSearchBar()
         fetchCharacters()
     }
@@ -46,6 +47,7 @@ extension CharactersViewController {
         tableView.isHidden = true
         collectionView.isHidden = true
         activityIndicator.startAnimating()
+        
         apiManager.characters(query: query) { characters in
             self.activityIndicator.stopAnimating()
             if let characters = characters {
@@ -59,6 +61,9 @@ extension CharactersViewController {
     }
     
     func setupTableView(with characters: [Character]) {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
+        
         self.characters = characters
         tableView.isHidden = false
         collectionView.isHidden = true
@@ -99,6 +104,7 @@ extension CharactersViewController: CharactersDelegate {
 }
 
 extension CharactersViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         let query = searchBar.text ?? ""
@@ -106,6 +112,7 @@ extension CharactersViewController: UISearchBarDelegate {
             fetchCharacters(for: query)
         }
     }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }

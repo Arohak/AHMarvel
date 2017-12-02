@@ -10,16 +10,19 @@ import UIKit
 
 final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
     
+    typealias Cell = CharacterTableCell
+
     var items:[Character] = []
     weak var tableView: UITableView?
     weak var delegate: UITableViewDelegate?
     
     required init(items: [Character], tableView: UITableView, delegate: UITableViewDelegate) {
+        super.init()
+
         self.items = items
         self.tableView = tableView
         self.delegate = delegate
-        super.init()
-        tableView.register(cellType: CharacterTableCell.self)
+        tableView.register(cellType: Cell.self)
         self.setupTableView()
     }
     
@@ -29,9 +32,10 @@ final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CharacterTableCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: Cell.self)
         let character = self.items[indexPath.row]
-        cell.setup(item: character)
+        cell.setup(with: character)
+        
         return cell
     }
 }
@@ -43,11 +47,7 @@ class CharactersTableDelegate: NSObject, UITableViewDelegate {
     init(_ delegate: CharactersDelegate) {
         self.delegate = delegate
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CharacterTableCell.height()
-    }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate.didSelectCharacter(at: indexPath)
     }

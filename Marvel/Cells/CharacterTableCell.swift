@@ -1,26 +1,47 @@
-//
-//  CharacterTableCell.swift
-//  Marvel
-//
-//  Created by Thiago Lioy on 15/11/16.
-//  Copyright © 2016 Thiago Lioy. All rights reserved.
-//
 
 import UIKit
 import Reusable
+import PureLayout
 
-final class CharacterTableCell: UITableViewCell, NibReusable {
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var characterDescription: UILabel!
-    @IBOutlet weak var thumb: UIImageView!
+extension CharacterTableCell: Reusable { }
+
+class CharacterTableCell: UITableViewCell {
     
-    static func height() -> CGFloat {
-        return 80
+    lazy var cellContentView: CharacterCellContentView = {
+        let view = CharacterCellContentView.newAutoLayout()
+
+        return view
+    }()
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupViewConfiguration()
     }
     
-    func setup(item: Character) {
-        name.text = item.name
-        characterDescription.text = item.bio.isEmpty ? "No description" : item.bio
-        thumb.download(image: item.thumImage?.fullPath() ?? "")
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension CharacterTableCell: ViewConfiguration {
+    
+    func configureViews() {
+        selectionStyle = .none
+    }
+    
+    func buildViewHierarchy() {
+        contentView.addSubview(cellContentView)
+    }
+    
+    func setupConstraints() {
+        cellContentView.autoPinEdgesToSuperviewEdges()
+    }
+}
+
+extension CharacterTableCell {
+    
+    func setup(with item: Character) {
+        cellContentView.setup(with: item)
     }
 }

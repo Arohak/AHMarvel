@@ -27,15 +27,15 @@ struct MockLoader {
             } else {
                 return nil
             }
-        } catch{
+        } catch {
             return nil
         }
     }
 }
 
 extension MockLoader {
+    
     func map<T: Mappable>(to type: T.Type) -> T? {
         return Mapper<T>().map(JSONString: json)
     }
-    
 }
