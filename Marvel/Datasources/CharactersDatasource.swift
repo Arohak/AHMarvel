@@ -11,7 +11,6 @@ import UIKit
 final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
     
     typealias Cell = CharacterTableCell
-//    typealias Cell = CustomCell
 
     var items:[Character] = []
     weak var tableView: UITableView?
@@ -35,7 +34,7 @@ final class CharactersDatasource: NSObject, ItemsTableViewDatasource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: Cell.self)
         let character = self.items[indexPath.row]
-        cell.setup(item: character)
+        cell.setup(with: character)
         
         return cell
     }
@@ -48,11 +47,7 @@ class CharactersTableDelegate: NSObject, UITableViewDelegate {
     init(_ delegate: CharactersDelegate) {
         self.delegate = delegate
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CharacterTableCell.height()
-    }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate.didSelectCharacter(at: indexPath)
     }

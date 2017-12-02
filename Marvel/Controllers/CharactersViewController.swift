@@ -61,6 +61,9 @@ extension CharactersViewController {
     }
     
     func setupTableView(with characters: [Character]) {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
+        
         self.characters = characters
         tableView.isHidden = false
         collectionView.isHidden = true

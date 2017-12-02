@@ -9,6 +9,7 @@
 import UIKit
 
 final class CharacterViewController: UIViewController {
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
     
@@ -16,6 +17,7 @@ final class CharacterViewController: UIViewController {
 }
 
 extension CharacterViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -23,6 +25,7 @@ extension CharacterViewController {
 }
 
 extension CharacterViewController {
+    
     func setupView() {
         name.text = character?.name ?? ""
         image.download(image: character?.thumImage?.fullPath() ?? "")
